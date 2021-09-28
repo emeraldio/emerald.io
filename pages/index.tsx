@@ -10,14 +10,15 @@ const RandomText = ({ children: finalText }: { children: string }) => {
     Math.floor((Math.random() * finalText.length) / 2) + finalText.length
   );
   const timeout = 32;
-  const charmap = 1024;
+  const charmap = 512;
 
   useEffect(() => {
     if (iterations <= maxIters) {
       setTimeout(() => {
         const randomString = Array(finalText.length)
           .fill(null)
-          .map(() => String.fromCharCode(Math.floor(Math.random() * charmap)));
+          .map(() => String.fromCharCode(Math.floor(Math.random() * charmap)))
+          .filter((n) => !n.match(/[\n\r]/g));
         const remaining = maxIters - iterations;
         if (remaining < finalText.length) {
           const revealed = finalText.length - remaining;
@@ -29,7 +30,7 @@ const RandomText = ({ children: finalText }: { children: string }) => {
     }
   }, [finalText, iterations]);
 
-  return <>{text}</>;
+  return <span className={styles.randomText}>{text}</span>;
 };
 
 const Home: NextPage = () => {
@@ -37,7 +38,7 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <Head>
         <title>emerald</title>
-        <meta name="description" content="web3 creative studio" />
+        <meta name="description" content="web3 toy studio" />
         <link rel="icon" href="/favicon.ico" />
         <link
           href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
@@ -46,12 +47,13 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <strong>
-          <RandomText>internet toys for internet people</RandomText>
-        </strong>
+        <strong style={{ color: "green" }}>
+          <RandomText>emerald</RandomText>
+        </strong>{" "}
+        <RandomText>is a web3 toy studio</RandomText>
         <p>
-          <a href="https://spacetime.rodeo">spacetime.rodeo</a> a pyschedelic
-          internet aquarium
+          <a href="https://spacetime.rodeo">spacetime.rodeo</a>{" "}
+          <small>pyschedelic internet aquarium</small>
         </p>
       </main>
     </div>
