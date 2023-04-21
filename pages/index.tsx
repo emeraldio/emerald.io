@@ -50,10 +50,17 @@ const Home: NextPage = () => {
         <strong style={{ color: "green" }}>
           <RandomText>emerald</RandomText>
         </strong>{" "}
-        <RandomText>is a web3 toy studio</RandomText>
+        <RandomText>is an internet toy shop</RandomText>
+        <p>
+          <a href="https://grok.computer">grok.computer</a>{" "}
+          byte-sized coding lessons
+        </p>
         <p>
           <a href="https://spacetime.rodeo">spacetime.rodeo</a>{" "}
-          <small>pyschedelic internet aquarium</small>
+          pyschedelic internet aquarium
+        </p>
+        <p>
+          <a href="https://campedersen.com">more!</a>
         </p>
       </main>
     </div>
