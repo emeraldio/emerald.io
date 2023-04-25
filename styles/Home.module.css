@@ -1,14 +1,10 @@
 .container {
-  min-height: 100vh;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-  height: 100vh;
 }
 
 .main {
   padding: 2.56rem;
+  position: relative;
+  z-index: 2;
   /* flex: 1; */
   /* display: flex;
   flex-direction: column;
@@ -18,4 +14,17 @@
 
 .randomText {
   overflow: hidden;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.links {
+  margin: 32px 0;
 }

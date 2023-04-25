@@ -33,6 +33,32 @@ const RandomText = ({ children: finalText }: { children: string }) => {
   return <span className={styles.randomText}>{text}</span>;
 };
 
+import { useMemo } from "react";
+import { Geometry } from "three-stdlib";
+import { Canvas } from "@react-three/fiber";
+import { Physics, usePlane, useConvexPolyhedron } from "@react-three/cannon";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+
+const Background = () => {
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    setReady(typeof window !== "undefined");
+  }, []);
+  if (!ready) return null;
+  const { nodes } = useGLTF("/diamond.glb") as any;
+  return (
+    <div className={styles.background}>
+      <Canvas shadows camera={{ position: [0, 0, 2.56], fov: 16 }}>
+        <OrbitControls autoRotate autoRotateSpeed={0.16} />
+        <mesh geometry={nodes.Cylinder.geometry} rotation-x={0.32} rotation-z={0.64}>
+          <meshBasicMaterial wireframe />
+        </mesh>
+      </Canvas>
+    </div>
+  );
+};
+
+
 const Home: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -46,21 +72,25 @@ const Home: NextPage = () => {
         />
       </Head>
 
+      <Background />
+
       <main className={styles.main}>
         <strong style={{ color: "green" }}>
           <RandomText>emerald</RandomText>
         </strong>{" "}
-        <RandomText>is an internet toy shop</RandomText>
+        <RandomText>is an internet toy factory</RandomText>
+        <div className={styles.links}>
+          <p>
+            <a href="https://grok.computer" target="_blank">grok.computer</a>{" "}
+            byte-sized coding lessons
+          </p>
+          <p>
+            <a href="https://spacetime.rodeo" target="_blank">spacetime.rodeo</a>{" "}
+            pyschedelic internet aquarium
+          </p>
+        </div>
         <p>
-          <a href="https://grok.computer">grok.computer</a>{" "}
-          byte-sized coding lessons
-        </p>
-        <p>
-          <a href="https://spacetime.rodeo">spacetime.rodeo</a>{" "}
-          pyschedelic internet aquarium
-        </p>
-        <p>
-          <a href="https://campedersen.com">more!</a>
+          <a href="https://campedersen.com" target="_blank">more!</a>
         </p>
       </main>
     </div>
