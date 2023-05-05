@@ -57,6 +57,10 @@ const Home: NextPage = () => {
             <a href="https://spacetime.rodeo" target="_blank">spacetime.rodeo</a>{" "}
             pyschedelic internet aquarium
           </p>
+          <p>
+            <a href="http://tinypoem.io" target="_blank">tinypoem.io</a>{" "}
+            markov chains for your heart
+          </p>
         </div>
         <p>
           <a href="https://campedersen.com" target="_blank">more!</a>
