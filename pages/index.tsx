@@ -50,20 +50,28 @@ const Home: NextPage = () => {
         <RandomText>is an internet toy factory</RandomText>
         <div className={styles.links}>
           <p>
-            <a href="https://grok.computer" target="_blank">grok.computer</a>{" "}
+            <a href="https://rubberduck.gg" target="_blank">
+              rubberduck.gg
+            </a>{" "}
             byte-sized coding lessons
           </p>
           <p>
-            <a href="https://spacetime.rodeo" target="_blank">spacetime.rodeo</a>{" "}
+            <a href="https://spacetime.rodeo" target="_blank">
+              spacetime.rodeo
+            </a>{" "}
             pyschedelic internet aquarium
           </p>
           <p>
-            <a href="http://tinypoem.io" target="_blank">tinypoem.io</a>{" "}
+            <a href="http://tinypoem.io" target="_blank">
+              tinypoem.io
+            </a>{" "}
             markov chains for your heart
           </p>
         </div>
         <p>
-          <a href="https://campedersen.com" target="_blank">more!</a>
+          <a href="https://campedersen.com" target="_blank">
+            more!
+          </a>
         </p>
       </main>
     </div>
